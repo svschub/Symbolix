@@ -1,0 +1,10 @@
+Makefile
+Makefile.in
+stamp-h1
+libparser.la
+.deps
+.libs
+*.lo
+*.o
+*.cc
+*.hh

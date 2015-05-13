@@ -1,0 +1,6 @@
+Makefile
+Makefile.in
+stamp-h1
+libast.la
+.deps
+.libs

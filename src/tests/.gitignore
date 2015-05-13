@@ -1,0 +1,7 @@
+Makefile
+Makefile.in
+stamp-h1
+ast_test
+differentiate
+.deps
+*.o

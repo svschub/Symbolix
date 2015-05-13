@@ -1,0 +1,48 @@
+Description:
+============
+
+Symbolix shows how to parse a formula with Bison/Flex and create an abstract syntax tree (AST).
+
+The following operations can then be applied to the generated AST:
+
+    1) calculate a result (to all variables must be assigned a value)
+    2) differentiate the formula which returns the AST of the derivative
+    3) convert the AST into a readable string
+
+All these operations are implemented as visitors (see "visitor pattern").
+
+
+Directory Structure:
+====================
+
+    src/AST: code of the abstract syntax tree and the possible operations on the ASt
+    src/parser: Bison/Flex code of the parser
+    src/tests: some demos
+
+
+Build Process:
+==============
+
+    For the build process Automake and Libtool is used. 
+
+    If you want to build the code the first time, call 
+    
+        autoreconf -i
+        
+    This is a wrapper script that executes all Autotools in the correct order to generate 
+    the Makefile.in templates from the Makefile.am files. The -i parameter is necessary to
+    create some missing files for the build. Subsequent calls of autoreconf can then be done
+    without the -i parameter.
+    
+    After that call
+
+    ./configure
+
+    then
+    
+    make
+    
+
+    If you want to install the demos into /usr/bin or /usr/local/bin, call 
+    
+    make install

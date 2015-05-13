@@ -1,0 +1,15 @@
+noinst_LTLIBRARIES = libast.la
+
+EXCEPTIONS_HEADERFILES = Exception/DivisionByZeroException.h Exception/UnknownIdentifierException.h Exception/InvalidExpressionException.h Exception/Exceptions.h Exception/InvalidFunctionParametersException.h 
+EXCEPTIONS_SOURCES = Exception/DivisionByZeroException.C Exception/InvalidFunctionParametersException.C Exception/UnknownIdentifierException.C Exception/InvalidExpressionException.C 
+
+EXPRESSIONS_HEADERFILES = Expression/Number.h Expression/Variable.h Expression/Expression.h Expression/ExpressionList.h Expression/FunctionCall/FunctionCall.h Expression/FunctionCall/FunctionByIdentifier.h Expression/FunctionCall/Ln.h Expression/FunctionCall/ArcTan.h Expression/FunctionCall/Tan.h Expression/FunctionCall/ArSinh.h Expression/FunctionCall/Tanh.h Expression/FunctionCall/Cot.h Expression/FunctionCall/ArTanh.h Expression/FunctionCall/Cosh.h Expression/FunctionCall/Cos.h Expression/FunctionCall/Sinh.h Expression/FunctionCall/Sqrt.h Expression/FunctionCall/Sin.h Expression/FunctionCall/ArcSin.h Expression/FunctionCall/BasicFunctions.h Expression/FunctionCall/ArcCos.h Expression/FunctionCall/Exp.h Expression/FunctionCall/FunctionFactory.h Expression/FunctionCall/ArCosh.h Expression/Text.h Expression/Operation/Multiplication.h Expression/Operation/BinaryOperation.h Expression/Operation/Negation.h Expression/Operation/Subtraction.h Expression/Operation/Addition.h Expression/Operation/Power.h Expression/Operation/Division.h Expression/Operation/UnaryOperation.h 
+EXPRESSIONS_SOURCES = Expression/Expression.C Expression/ExpressionList.C Expression/Variable.C Expression/Number.C Expression/FunctionCall/Cot.C Expression/FunctionCall/FunctionByIdentifier.C Expression/FunctionCall/ArTanh.C Expression/FunctionCall/FunctionFactory.C Expression/FunctionCall/Sinh.C Expression/FunctionCall/Cosh.C Expression/FunctionCall/ArcSin.C Expression/FunctionCall/ArCosh.C Expression/FunctionCall/ArSinh.C Expression/FunctionCall/ArcTan.C Expression/FunctionCall/Ln.C Expression/FunctionCall/Sin.C Expression/FunctionCall/Tan.C Expression/FunctionCall/Tanh.C Expression/FunctionCall/Sqrt.C Expression/FunctionCall/Exp.C Expression/FunctionCall/Cos.C Expression/FunctionCall/FunctionCall.C Expression/FunctionCall/ArcCos.C Expression/Text.C Expression/Operation/BinaryOperation.C Expression/Operation/Division.C Expression/Operation/Negation.C Expression/Operation/Addition.C Expression/Operation/UnaryOperation.C Expression/Operation/Subtraction.C Expression/Operation/Multiplication.C Expression/Operation/Power.C 
+
+VISITORS_HEADERFILES = Visitor/Visitor.h Visitor/GetResultVisitor.h Visitor/SimplifyVisitor.h Visitor/StringifyVisitor.h Visitor/GetDerivativeVisitor.h Visitor/Scope.h 
+VISITORS_SOURCES = Visitor/SimplifyVisitor.C Visitor/Visitor.C Visitor/GetResultVisitor.C Visitor/StringifyVisitor.C Visitor/GetDerivativeVisitor.C Visitor/Scope.C
+
+libast_la_SOURCES = $(EXCEPTIONS_SOURCES) $(EXPRESSIONS_SOURCES) $(VISITORS_SOURCES)
+libast_la_LDFLAGS = -lm
+
+noinst_HEADERS = AST.h $(AST_EXCEPTIONS_HEADERFILES) $(AST_EXPRESSIONS_HEADERFILES) $(AST_VISITORS_HEADERFILES)
